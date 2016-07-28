@@ -57,7 +57,7 @@ public class JokerTextFragment extends Fragment {
         @Override
         public int getCount() {
             if (list != null) {
-                Log.i(tag, "有数据:"+list.size());
+                Log.i(tag, "有数据:" + list.size());
                 return list.size();
             } else {
                 Log.i(tag, "数据为空");

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_margin="5dp"
-    android:background="@drawable/list_item_shape"
-    android:orientation="vertical">
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_margin="5dp"
+              android:padding="10dp"
+              android:background="@drawable/list_item_shape"
+              android:orientation="vertical">
 
     <TextView
         android:id="@+id/name"
@@ -12,15 +13,20 @@
         android:layout_height="fill_parent"
         android:text="名字"
         android:textColor="#131313"
-        android:textSize="25sp" />
+        android:textSize="25sp"/>
 
-    <TextView
+    <com.tai.joker.joker.view.ExpandableTextView
         android:id="@+id/content"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:text="内容"
-        android:textColor="#00fff7"
-        android:textSize="15sp" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-5dip"
+        android:textSize="18sp"
+        android:contextClickable="true"
+        android:lineSpacingExtra="4dip"
+        android:paddingBottom="-40dip"
+        android:paddingRight="48dip"
+        android:text="可以展开的文本"
+        android:textColor="#ffffff"/>
 
     <TextView
         android:id="@+id/date"
@@ -28,6 +34,6 @@
         android:layout_height="fill_parent"
         android:text="日期"
         android:textColor="#00fd3b"
-        android:textSize="12sp" />
+        android:textSize="12sp"/>
 
 </LinearLayout>

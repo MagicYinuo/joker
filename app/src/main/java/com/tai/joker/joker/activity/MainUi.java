@@ -33,7 +33,7 @@ import java.util.List;
 public class MainUi extends AppCompatActivity {
     private String tag = this.getClass().getSimpleName();
     private ArrayList<Fragment> mFragments = new ArrayList<>();
-    private final String[] mTitles = {"文本笑话", "搞笑图片", "新闻"};
+    private String[] mTitles = {"文本笑话", "搞笑图片", "新闻"};
     private MyPagerAdapter mAdapter;
     private Gson gson;
     private List<JokerTextBean.ShowapiResBodyBean.ContentlistBean> mData;
@@ -76,18 +76,14 @@ public class MainUi extends AppCompatActivity {
                         super.onSuccess(i, s);
                         Toast.makeText(getApplicationContext(), "获取数据成功", Toast.LENGTH_SHORT).show();
                         gson = new Gson();
-
+                        //解析数据
                         jokerTextBean = gson.fromJson(s, JokerTextBean.class);
-                        if (jokerTextBean == null) {
-                            Log.i(tag, "gson解析数据失败为空");
-                        } else {
-                            Log.i(tag, "文本解析数据成功:" + jokerTextBean.getShowapi_res_body().getContentlist().get(0).getText());
-                            mData = jokerTextBean.getShowapi_res_body().getContentlist();
-                            //设置fragment
-                            mFragments.add(JokerTextFragment.getInstance(mData));
-                            layout.addNewTab(mTitles[0]);
-                            mAdapter.notifyDataSetChanged();
-                        }
+                        Log.i(tag, "文本解析数据成功:" + jokerTextBean.getShowapi_res_body().getContentlist().get(0).getText());
+                        mData = jokerTextBean.getShowapi_res_body().getContentlist();
+                        //设置fragment
+                        mFragments.add(JokerTextFragment.getInstance(mData));
+                        layout.addNewTab(mTitles[0]);
+                        mAdapter.notifyDataSetChanged();
                     }
                 });
             } else if ("搞笑图片" == title) {
@@ -97,17 +93,14 @@ public class MainUi extends AppCompatActivity {
                         super.onSuccess(i, s);
                         Toast.makeText(getApplicationContext(), "获取数据成功", Toast.LENGTH_SHORT).show();
                         gson = new Gson();
+                        //解析数据
                         jokerPicBean = gson.fromJson(s, JokerPicBean.class);
-                        if (jokerPicBean == null) {
-                            Log.i(tag, "gson解析数据失败为空");
-                        } else {
-                            Log.i(tag, "图片解析数据成功:" + jokerPicBean.getShowapi_res_body().getContentlist().get(0).getImg());
-                            mPicData = jokerPicBean.getShowapi_res_body().getContentlist();
-                            //设置fragment
-                            mFragments.add(JokerPicFragment.getInstance(mPicData));
-                            layout.addNewTab(mTitles[1]);
-                            mAdapter.notifyDataSetChanged();
-                        }
+                        Log.i(tag, "图片解析数据成功:" + jokerPicBean.getShowapi_res_body().getContentlist().get(0).getImg());
+                        mPicData = jokerPicBean.getShowapi_res_body().getContentlist();
+                        //设置fragment
+                        mFragments.add(JokerPicFragment.getInstance(mPicData));
+                        layout.addNewTab(mTitles[1]);
+                        mAdapter.notifyDataSetChanged();
                     }
                 });
             } else {
@@ -118,17 +111,14 @@ public class MainUi extends AppCompatActivity {
                         super.onSuccess(i, s);
                         Toast.makeText(getApplicationContext(), "获取数据成功", Toast.LENGTH_SHORT).show();
                         gson = new Gson();
+                        //解析数据
                         NewsBean newsBean = gson.fromJson(s, NewsBean.class);
-                        if (newsBean == null) {
-                            Log.i(tag, "gson解析数据失败为空");
-                        } else {
-                            Log.i(tag, "解析数据成功:" + newsBean.getCode());
-                            mNewsData = newsBean.getNewslist();
-                            //设置fragment
-                            mFragments.add(NewsFragment.getInstance(mNewsData));
-                            layout.addNewTab(mTitles[2]);
-                            mAdapter.notifyDataSetChanged();
-                        }
+                        Log.i(tag, "解析数据成功:" + newsBean.getCode());
+                        mNewsData = newsBean.getNewslist();
+                        //设置fragment
+                        mFragments.add(NewsFragment.getInstance(mNewsData));
+                        layout.addNewTab(mTitles[2]);
+                        mAdapter.notifyDataSetChanged();
                     }
                 });
             }
