@@ -94,6 +94,7 @@ public class NewsFragment extends Fragment {
                     Intent intent=new Intent(mContext, NewsItemActivity.class);
                     Bundle bundle=new Bundle();
                     bundle.putString("key",contentlistBean.getUrl());
+                    intent.putExtras(bundle);
                     startActivity(intent);
                 }
             });
