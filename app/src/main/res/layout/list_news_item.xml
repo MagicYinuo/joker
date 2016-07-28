@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:layout_marginBottom="4dp"
+    android:background="@drawable/list_item_shape"
+    android:orientation="vertical">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+
+    <TextView
+        android:id="@+id/new__item_title"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:text="名字"
+        android:textColor="#131313"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/new__item_desc"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:text="内容"
+        android:textColor="#00fff7"
+        android:textSize="15sp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/new__item_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="日期"
+            android:textColor="#00fd3b"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+
+</LinearLayout>

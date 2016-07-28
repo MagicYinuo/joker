@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/background" android:state_pressed="true">
+        <shape>
+            <corners android:radius="5dp"></corners>
+            <solid android:color="#0000ff"></solid>
+            <padding android:bottom="3dp" android:left="3dp" android:right="3dp" android:top="3dp"></padding>
+        </shape>
+    </item>
+    <item android:drawable="@drawable/card_back">
+        <shape>
+            <corners android:radius="5dp"></corners>
+            <solid android:color="#ff00"></solid>
+            <padding android:bottom="3dp" android:left="3dp" android:right="3dp" android:top="3dp"></padding>
+        </shape>
+    </item>
+</selector>
